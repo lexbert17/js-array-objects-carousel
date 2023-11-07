@@ -24,6 +24,9 @@ const images = [
     }
 ];
 
+// accedo agli oggetti
+
+
 let imageString =""
 for (let i = 0; i < images.length; i++) {
     const element = images[i];
@@ -37,7 +40,12 @@ for (let i = 0; i < images.length; i++) {
         </div>    
     </div>`
     console.log(imageString);
+
+    thumbElem = document.querySelector(".thumb").innerHTML += `<img class="big-image" src="${element.image}" alt=""> `
 }
+
+// stampo gli elementi 
+
 const itemsElem = document.querySelector (".items")
 itemsElem.innerHTML += imageString;
 console.log(itemsElem);
@@ -45,13 +53,11 @@ let currentIndex = 0;
 const slideElems = document.querySelectorAll(".item")
 slideElems[currentIndex].classList.add("active");
 
+
 // pulsante avanti
 
-const backwardsInterval =""
-
-
     document.querySelector(".next").addEventListener ("click", function () { 
-    clearInterval(forwardInterval)
+    // clearInterval(forwardInterval)
     slideElems[currentIndex].classList.remove("active"); 
     if (currentIndex < slideElems.length - 1) {
         currentIndex++;
@@ -65,7 +71,7 @@ const backwardsInterval =""
 // pulsante indietro
 
 document.querySelector(".prev").addEventListener("click", function() {
-    clearInterval(forwardInterval)
+    // clearInterval(forwardInterval)
     slideElems[currentIndex].classList.remove("active");
     if(currentIndex > 0) {
         currentIndex--;
@@ -86,3 +92,7 @@ document.querySelector(".prev").addEventListener("click", function() {
     }
     slideElems[currentIndex].classList.add("active");
 }, 3000)
+
+
+
+  
