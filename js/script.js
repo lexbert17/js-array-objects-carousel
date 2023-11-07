@@ -51,6 +51,7 @@ const backwardsInterval =""
 
 
     document.querySelector(".next").addEventListener ("click", function () { 
+    clearInterval(forwardInterval)
     slideElems[currentIndex].classList.remove("active"); 
     if (currentIndex < slideElems.length - 1) {
         currentIndex++;
@@ -75,7 +76,7 @@ document.querySelector(".prev").addEventListener("click", function() {
    
 })
 
-const forwardInterval =setInterval(function(){
+    let forwardInterval =setInterval(function(){
     slideElems[currentIndex].classList.remove("active");
     
     if (currentIndex < slideElems.length - 1) {
